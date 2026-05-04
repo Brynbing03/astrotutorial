@@ -1,22 +1,47 @@
----
+<!-- ---
+import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
+const pageTitle = "Home Page";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<!-- nav bar -->
-        <a href="/">Home</a>
-    	<a href="/about/">About</a>
-    	<a href="/blog/">Blog</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <script>
+	import "../scripts/menu.js";
+  </script>
+  <body>
+	<Header />
+    <h1>{pageTitle}</h1>
+    <h2>Welcome to my Astro site!</h2>
 
-		<h1>My Astro Site</h1>
-	</body>
-</html>
+    <p>
+      Hey! I'm Brynlee, a Software Engineering student focusing on frontend
+      development and user experience.
+    </p>
+
+    <Footer />
+	<script>
+	import "../scripts/menu.js";
+	</script>
+  </body>
+</html> -->
+
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Home Page";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Welcome to my Astro site!</h2>
+
+  <p>
+    Hey! I'm Brynlee, a Software Engineering student focusing on frontend
+    development and user experience.
+  </p>
+</BaseLayout>
